@@ -1,4 +1,4 @@
-##Flickr Photo Stream
+## Flickr Photo Stream
 A Front end built to consume Flickr Public API
 
 ## Getting Started
