@@ -47,6 +47,25 @@ class SearchPage extends Component {
       });
   }
 
+  updateSearch() {
+    var that = this;
+    fetchJsonp(api + this.state.search, {
+      jsonpCallbackFunction: "jsonFlickrFeed"
+    })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(json) {
+        console.log(that, "this");
+        that.setState({
+          Photos: json.items
+        });
+      })
+      .catch(function(ex) {
+        console.log("parsing failed", ex);
+      });
+  }
+
   handleKeyDown = e => {
     if (e.keyCode === 13) {
       let name = e.target.name;
@@ -54,7 +73,7 @@ class SearchPage extends Component {
       this.setState(function() {
         return { [name]: value };
       });
-      this.componentDidMount();
+      this.updateSearch();
     }
   };
 
