@@ -1,5 +1,5 @@
 ## Flickr Photo Stream
-A Front end built to consume Flickr Public API
+A Front end built to consume Flickr Public API, although the public api only returns images with a 'safe' tag by default it may return content that isn't suitable for all ages 
 
 ## Getting Started
 ```
